@@ -1,0 +1,5 @@
+import { AppShell, PageHeader } from '@/components/app-shell'
+import { Button } from '@/components/ui/button'
+import { Bookmark, Play } from 'lucide-react'
+
+export default function SavedPage() { return <AppShell><PageHeader eyebrow="Watch later" title="Saved videos" description="Keep a focused queue of videos you want to turn into notes." /><div className="mx-auto max-w-5xl px-5 py-10 sm:px-8"><div className="flex flex-col gap-3">{['Distributed Systems in 15 minutes', 'How databases use indexes', 'The mental models of great engineers'].map((title, index) => <div key={title} className="flex flex-col gap-4 border border-border bg-card p-5 sm:flex-row sm:items-center sm:justify-between"><div><div className="flex items-center gap-2 text-xs text-accent"><Bookmark data-icon="inline-start" /> Saved {index + 1} days ago</div><h2 className="mt-2 font-semibold text-foreground">{title}</h2><p className="mt-1 text-sm text-muted-foreground">youtube.com · Educational video</p></div><Button variant="outline"><Play data-icon="inline-start" /> Create notes</Button></div>)}</div></div></AppShell> }
